@@ -1,4 +1,7 @@
-data_full <- read.csv('household_power_consumption.csv',sep = ';', na.strings = '?')
+download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", destfile="hpc.zip")
+unzip("hpc.zip")
+data_full<-read.table("household_power_consumption.txt", sep=";", header=TRUE, na.strings="?")
+
 
 #Convert Date to Date format
 data_full$Date <- as.Date(data_full$Date, "%d/%m/%Y")
